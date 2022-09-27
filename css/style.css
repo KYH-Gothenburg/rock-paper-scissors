@@ -43,3 +43,7 @@ body {
     justify-content: space-evenly;
     border-radius: 20px;
 }
+
+#result-text {
+    font-size: 3rem;
+}
