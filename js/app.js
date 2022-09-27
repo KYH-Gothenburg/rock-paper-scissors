@@ -6,10 +6,9 @@ let cScore = 0;
 
 selections.forEach((selection) => {
     selection.addEventListener("click", function() {
-        const pInput = this.value;
+        const pInput = parseInt(this.value);
         
-        const cOptions = ["rock", "paper", "scissors"];
-        const cInput = cOptions[Math.floor(Math.random() * 3)];
+        const cInput = Math.floor(Math.random() * 3);
 
         updateMoveImgs(pInput, cInput);
         compareInputs(pInput, cInput);
@@ -32,37 +31,13 @@ function compareInputs(pInput, cInput) {
         return;
     }
 
-    if(pInput === "rock") {
-        if(cInput == "scissors") {
-            document.getElementById("result-text").innerHTML = "You win!";
-            pScore++;
-        }
-        else {
-            document.getElementById("result-text").innerHTML = "Computer win!";
-            cScore++;
-        }
+    if((pInput + 1) % 3 === cInput) {
+        document.getElementById("result-text").innerHTML = "Computer win!";
+        cScore++;
     }
-
-    else if(pInput === "paper") {
-        if(cInput == "rock") {
-            document.getElementById("result-text").innerHTML = "You win!";
-            pScore++;
-        }
-        else {
-            document.getElementById("result-text").innerHTML = "Computer win!";
-            cScore++;
-        }
-    }
-    // pInput == "scissors"
     else {
-        if(cInput == "paper") {
-            document.getElementById("result-text").innerHTML = "You win!";
-            pScore++;
-        }
-        else {
-            document.getElementById("result-text").innerHTML = "Computer win!";
-            cScore++;
-        }
+        document.getElementById("result-text").innerHTML = "You win!";
+        pScore++;
     }
 }
 

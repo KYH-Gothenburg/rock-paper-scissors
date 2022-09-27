@@ -1,0 +1,10 @@
+sten == sten oav.
+påse == påse oav.
+sax == sax oav.
+
+pInput = 0
+cInput = 1
+
+pInput === cInput
+
+(pInput + 1) % 3 === cInput
